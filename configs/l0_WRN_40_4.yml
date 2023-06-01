@@ -1,0 +1,45 @@
+
+#network
+name: L0WideResNet # L0WideResNet,VGG,VGG_BN
+depth: 40
+width: 4
+
+
+#hyper parameters
+epochs: 200
+lr: 0.1
+weight_decay: 0.0005
+multi_gpu: True
+lamba: 0.001
+beta_ema: 0.99
+droprate_init: 0.3
+resume: False
+
+
+#dataset
+dataset: tinyimagenet_adv #imagenet_1k  # c10, c100 , imagenet_1k, tinyimagenet_base ,tinyimagenet_adv
+batch_size: 128
+N: 100000
+data_path: ../../../dataset/tiny-imagenet-200   #../../../dataset/ILSVRC2012_w  # cifar10_path: ../data
+seed: 1
+
+
+#sparse constraint
+iscloss: False
+a: 100
+lambdda: 1
+
+#train
+isadvtraining: False
+save_path: L0WideResNet
+amp: False
+
+#test
+test_method: base #'base,PGD_10,PGD_20,AA,SA,FGSM'
+
+#prune
+isprune: False
+checkpoint_path:
+freeze_bn: False
+isfinetune: False
+sparsity: 0.5 #leave

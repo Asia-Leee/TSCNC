@@ -1,0 +1,38 @@
+#network
+name: L0WideResNet # L0WideResNet
+depth: 28
+width: 10
+
+
+#hyper parameters
+epochs: 20
+lr: 0.1
+weight_decay: 0.0005
+multi_gpu: True
+lamba: 0.001
+beta_ema: 0.99
+droprate_init: 0.3
+resume: False
+
+
+#dataset
+dataset: c100
+batch_size: 64
+N: 50000
+
+
+#sparse constraint
+iscloss: True
+a: 100
+lambdda: 1
+
+#train
+isadvtraining: True
+
+#test
+test_mode: APGD #'base,PGD-10,PGD-20,AA,SA,FGSM,APGD'
+
+#prune
+isprune: True
+isfinetune: False
+sparsity: 0.1
